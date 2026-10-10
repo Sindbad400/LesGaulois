@@ -22,4 +22,24 @@ public class Gaulois {
 	private String prendreParole() {
 		return "Le gauloi" + nom + " : ";
 	}
+	public void boirePotion(int forcePotion) {
+		effetPotion=effetPotion+forcePotion;
+	}
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		romain.recevoirCoup((effetPotion*force)/3);
+		effetPotion=effetPotion-1;
+	}
+	
+	@Override
+	public String toString() {
+		return nom;
+	}
+
+	public static void main(String[] args) {
+		Gaulois asterix=new Gaulois("Astérix",8,0);
+		System.out.println(asterix);
+	}
+	
+	
 }
